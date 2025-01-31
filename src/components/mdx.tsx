@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import React, { ReactNode } from "react";
@@ -70,6 +71,14 @@ function CustomLink({ href, children, ...props }: CustomLinkProps) {
   );
 }
 
+function List({ children }: { children: ReactNode }) {
+  return <ul className="list-disc list-inside">{children}</ul>;
+}
+
+function ListItem({ children }: { children: ReactNode }) {
+  return <li className="mb-2">{children}</li>;
+}
+
 function SmartImage({
   alt,
   src,
@@ -84,7 +93,7 @@ function SmartImage({
     <img
       src={src}
       alt={alt}
-      className="rounded-lg w-full object-cover my-8"
+      className="rounded-lg w-full object-cover my-8 aspect-video"
       {...props}
     />
   );
@@ -162,6 +171,8 @@ const components = {
   img: SmartImage,
   a: CustomLink,
   Table,
+  ul: List,
+  li: ListItem,
 };
 
 type CustomMDXProps = MDXRemoteProps & {

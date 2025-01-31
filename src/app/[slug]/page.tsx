@@ -1,35 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-
 import { CustomMDX } from "@/components/mdx";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { getProperty } from "@/lib/properties";
-import { formatPrice } from "@/lib/utils";
-import { notFound, useRouter } from "next/navigation";
+import { formatPrice, getProperty } from "@/lib/utils";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { use } from "react";
 
 export default function PropertyPage(props: {
   params: Promise<{ slug: string }>;
 }) {
   const params = use(props.params);
-  const property = getProperty(params.slug, [
-    "src",
-    "app",
-    "properties",
-    "contents",
-  ]);
-  const router = useRouter();
+  const property = getProperty(params.slug);
 
   if (!property) {
     notFound();
   }
 
   const { title, image, tag, price, details, features } = property.metadata;
-
-  const handleContact = () => {
-    router.push(`/${params.slug}/contact`);
-  };
 
   return (
     <main className="pt-24 px-4">
@@ -90,18 +78,17 @@ export default function PropertyPage(props: {
                 </div>
               </div>
             )}
-            {/* MDX Content */}
-            <div className="mt-12 prose max-w-none">
-              <CustomMDX source={property.content} />
-            </div>
-            {/* Contact Button */}
-            <Button
-              onClick={handleContact}
-              className="w-full bg-[#DC2626] hover:bg-red-700"
-            >
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="mt-12 prose max-w-none">
+            <CustomMDX source={property.content} />
+          </div>
+          <Link href={`/${params.slug}/contact`}>
+            <Button className="w-full bg-[#DC2626] hover:bg-red-700">
               Contactez-nous
             </Button>
-          </div>
+          </Link>
         </div>
       </div>
     </main>

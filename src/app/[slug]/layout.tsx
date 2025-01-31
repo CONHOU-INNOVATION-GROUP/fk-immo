@@ -1,5 +1,5 @@
-import { getProperties, getProperty } from "@/lib/properties";
 import { siteInfo } from "@/lib/site";
+import { getProperties, getProperty } from "@/lib/utils";
 import { Metadata } from "next";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 };
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const properties = getProperties(["src", "app", "properties", "contents"]);
+  const properties = getProperties();
   return properties.map((property) => ({
     slug: property.slug,
   }));
@@ -16,14 +16,13 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const property = getProperty(params.slug, [
-    "src",
-    "app",
-    "properties",
-    "contents",
-  ]);
+  const property = getProperty(params.slug);
+
   if (!property) {
-    return {};
+    return {
+      title: "Propriété non trouvée",
+      description: "La propriété que vous cherchez n'existe pas.",
+    };
   }
   const { title, description, image } = property.metadata;
 

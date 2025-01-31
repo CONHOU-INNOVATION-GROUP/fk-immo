@@ -8,7 +8,7 @@ export const navigation = {
   ],
   contact: {
     label: "CONTACTEZ-NOUS",
-    href: "#contact",
+    href: "/#contact",
   },
 };
 
@@ -42,28 +42,28 @@ export const services = [
     title: "GESTION DES BIENS IMMOBILIERS",
     description:
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
-    image: "/s1.webp",
+    image: "/services/s1.webp",
     link: "#",
   },
   {
     title: "DÉCORATION D'INTÉRIEUR",
     description:
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
-    image: "/s2.webp",
+    image: "/services/s2.webp",
     link: "#",
   },
   {
     title: "LOTISSEMENT & DÉCAPAGE",
     description:
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
-    image: "/s3.webp",
+    image: "/services/s3.webp",
     link: "#",
   },
   {
     title: "LOTISSEMENT & DÉCAPAGE",
     description:
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
-    image: "/s4.webp",
+    image: "/services/s4.webp",
     link: "#",
   },
 ];
@@ -146,9 +146,10 @@ export const contact = {
   form: {
     title: "Envoyer un message",
     fields: [
-      { name: "nom", label: "Nom", type: "text" },
-      { name: "prenom", label: "Prénom", type: "text" },
+      { name: "firstName", label: "Nom", type: "text" },
+      { name: "lastName", label: "Prénom", type: "text" },
       { name: "email", label: "Email", type: "email" },
+      { name: "phone", label: "Téléphone", type: "tel" },
       { name: "message", label: "Message", type: "textarea" },
     ],
     submitLabel: "Envoyer",

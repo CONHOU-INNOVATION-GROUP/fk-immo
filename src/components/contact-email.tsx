@@ -1,3 +1,5 @@
+import { siteInfo } from "@/lib/site";
+import { formatPrice } from "@/lib/utils";
 import { ContactFormType } from "@/types/site";
 import {
   Body,
@@ -5,6 +7,7 @@ import {
   Head,
   Heading,
   Html,
+  Img,
   Link,
   Preview,
   Section,
@@ -17,7 +20,7 @@ interface Props {
 }
 
 const ContactEmail = ({ data }: Props) => {
-  const { firstName, lastName, email, message } = data;
+  const { firstName, lastName, email, message, phone, property } = data;
 
   return (
     <Html>
@@ -41,12 +44,20 @@ const ContactEmail = ({ data }: Props) => {
             <Section className="flex flex-col gap-2">
               <Text className="text-black text-[14px] leading-[24px]">
                 <strong>Prénom:</strong> {firstName}
+              </Text>
+              <Text className="text-black text-[14px] leading-[24px]">
                 <strong>Nom:</strong> {lastName}
               </Text>
               <Text className="text-black text-[14px] leading-[24px]">
                 <strong>Email:</strong>{" "}
                 <Link className="no-underline" href={`mailto:${email}`}>
                   {email}
+                </Link>
+              </Text>
+              <Text className="text-black text-[14px] leading-[24px]">
+                <strong>Téléphone:</strong>{" "}
+                <Link className="no-underline" href={`tel:${phone}`}>
+                  {phone}
                 </Link>
               </Text>
 
@@ -56,6 +67,43 @@ const ContactEmail = ({ data }: Props) => {
                 </Text>
               )}
             </Section>
+            {property && (
+              <Section>
+                <Text className="text-xl font-semibold text-gray-800 mb-2">
+                  Détails de la propriété
+                </Text>
+
+                <Img
+                  src={property.metadata.image}
+                  alt={property.metadata.title}
+                  width={150}
+                  height={200}
+                  className="rounded-md mx-auto my-4"
+                />
+
+                <Text className="text-black text-[14px] leading-[24px]">
+                  <strong>Titre:</strong> {property.metadata.title}
+                </Text>
+                <Text className="text-black text-[14px] leading-[24px]">
+                  <strong>Description:</strong> {property.metadata.description}
+                </Text>
+                <Text className="text-black text-[14px] leading-[24px]">
+                  <strong>Prix:</strong>{" "}
+                  {property.metadata.price
+                    ? formatPrice(property.metadata.price)
+                    : "Prix à la demande"}
+                </Text>
+                <Text className="text-black text-[14px] leading-[24px]">
+                  <strong>Lien:</strong>{" "}
+                  <Link
+                    className="no-underline"
+                    href={`https://${siteInfo.url}/${property.slug}`}
+                  >
+                    Voir la propriété
+                  </Link>
+                </Text>
+              </Section>
+            )}
           </Container>
         </Body>
       </Tailwind>

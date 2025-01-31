@@ -1,15 +1,11 @@
-import { getProperties } from "@/lib/properties";
+import { getProperties } from "@/lib/utils";
 import Link from "next/link";
 import { PropertyCard } from "./properties/property-card";
 import { Button } from "./ui/button";
 
 export const FeaturedProperties = () => {
-  const featuredProperties = getProperties([
-    "src",
-    "app",
-    "properties",
-    "contents",
-  ]).slice(0, 6);
+  const featuredProperties = getProperties().slice(0, 6);
+
   return (
     <section className="py-16 px-4" id="features">
       <div className="max-w-7xl mx-auto">

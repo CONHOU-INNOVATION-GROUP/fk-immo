@@ -1,7 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { contact } from "@/lib/data";
 import { PropertyType } from "@/types/site";
+import axios from "axios";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -12,35 +17,47 @@ interface ContactFormProps {
 }
 
 export const ContactForm = ({ property }: ContactFormProps) => {
+  const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const { currentTarget } = e;
+
+    const resetable = currentTarget;
+
+    const formData = new FormData(currentTarget);
     const data = {
-      name: formData.get("name"),
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
       email: formData.get("email"),
       phone: formData.get("phone"),
       message: formData.get("message"),
       property,
     };
+    console.log(data);
+
+    if (!data.firstName || !data.lastName || !data.email || !data.phone) {
+      toast.error("Veuillez remplir tous les champs");
+      return;
+    }
+    setIsLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await axios.post("/api/contact", data);
 
-      if (!response.ok) {
-        throw new Error("Failed to send message");
+      if (res.data.success) {
+        resetable.reset();
+        toast.success(res.data.message);
+      } else {
+        toast.error(res.data.message);
       }
-
-      e.currentTarget.reset();
-      alert("Message sent successfully!");
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again.");
+    } catch (error: any) {
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Erreur lors de l'envoi du message"
+      );
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -57,9 +74,9 @@ export const ContactForm = ({ property }: ContactFormProps) => {
             <Textarea
               id={field.name}
               name={field.name}
-              rows={4}
-              className="w-full"
+              className="w-full h-24"
               defaultValue={field.name === "message" ? defaultMessage : ""}
+              disabled={isLoading}
             />
           ) : (
             <Input
@@ -67,12 +84,17 @@ export const ContactForm = ({ property }: ContactFormProps) => {
               id={field.name}
               name={field.name}
               className="w-full"
+              disabled={isLoading}
             />
           )}
         </div>
       ))}
-      <Button type="submit" className="w-full bg-[#DC2626] hover:bg-red-700">
-        {contact.form.submitLabel}
+      <Button type="submit" className="w-full" disabled={isLoading}>
+        {isLoading ? (
+          <Loader2 className="w-4 h-4 animate-spin" />
+        ) : (
+          contact.form.submitLabel
+        )}
       </Button>
     </form>
   );

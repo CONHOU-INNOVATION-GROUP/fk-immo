@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Comment lancer le projet
 
-## Getting Started
-
-First, run the development server:
+D'abord, ouvrez un terminal et lancez les commandes suivantes :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+pnpm dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ensuite, ouvrez [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Editer
 
-## Learn More
+### Metadata du site
 
-To learn more about Next.js, take a look at the following resources:
+Pour éditer les informations du site rendez-vous sur `src/lib/site.ts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Les propriétés
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pour éditer les propriétés rendez-vous sur `src/app/properties/contents`
+Pour chaque nouvelle propriété, créez un nouveau fichier dans ce dossier avec le slug de la propriété ex. `villa-luxueuse-de-700-m4-a-bingerville.mdx` puis ajoutez le contenu de la page en vous référant à l'exemple de `villa-luxueuse-de-700-m4-a-bingerville.mdx`
 
-## Deploy on Vercel
+Bon à savoir:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Si le prix n'est pas renseigné, la propriété sera en mode "Prix sur demande"
+- L'extension étant en `.mdx`, vous pouvez utiliser des composants react à l'intérieur de la page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Pour editer le mdx
+
+Pour editer le mdx je conseil l'extension [MDX for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
+
+Pour voir les images je conseil l'extension [Image Preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
+
+### Les images
+
+Les images sont dans le dossier
+
+- `public/properties` pour les images des propriétés
+- `public/expertises` pour les images de la section expertises
+- `public/contact` pour les images de la section contact
+- `public/socials` pour les images de la section footer(réseaux sociaux)
+- `public/services` pour les images de la section services
+
+### Les données statiques du site
+
+Pour les données statiques du site rendez-vous sur `src/lib/data.ts`
+
+### Email
+
+Pour activer l'envoi d'email, rendez-vous sur `.env`(renommer en `.env.example`) et remplissez les variables d'environnement `EMAIL_USER` et `EMAIL_PASSWORD` avec vos
+identifiants gmail
+
+### Comment déployer ?
+
+Peut etre déployer sur Vercel Ou un VPS
+
+1- Build le projet
+
+```bash
+pnpm run build
+```
+
+2-Copier les elements suivant dans le dossier de votre hebergeur
+
+```bash
+.next
+public
+package.json
+pnpm-lock.yaml
+server.js
+next.config.ts
+```
+
+3-Créer votre application Nodejs puis en entré le `server.js`
+
+Et voilà!

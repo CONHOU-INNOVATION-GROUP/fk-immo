@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { usePropertiesStore } from "@/store/properties";
-import { Pagination } from "./pagination";
+import { Pagination } from "./filters/pagination";
 import { PropertyCard } from "./property-card";
 
 export const PropertyGrid = () => {

@@ -2,6 +2,7 @@ export type ContactFormType = {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   message: string;
   property: PropertyType;
 };

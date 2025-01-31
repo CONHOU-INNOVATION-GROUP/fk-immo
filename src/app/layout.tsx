@@ -1,19 +1,41 @@
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { siteInfo } from "@/lib/site";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Toaster } from "sonner";
 import "./globals.css";
 
-const interSans = Inter({
-  variable: "--font-inter-sans",
+const primary = Inter({
+  variable: "--font-primary",
   subsets: ["latin"],
+  display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 export const metadata: Metadata = {
-  title: siteInfo.title,
+  metadataBase: new URL(`https://${siteInfo.url}`),
+  title: {
+    default: siteInfo.title,
+    template: `%s - ${siteInfo.title}`,
+  },
   description: siteInfo.description,
+  authors: [
+    {
+      name: siteInfo.author,
+      url: siteInfo.url,
+    },
+  ],
+  creator: siteInfo.creator,
   icons: {
     icon: "/logo.webp",
   },
@@ -23,6 +45,8 @@ export const metadata: Metadata = {
     url: siteInfo.url,
     siteName: siteInfo.title,
     images: [{ url: "/hero.webp" }],
+    locale: "fr_CI",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
@@ -48,11 +72,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${interSans.variable} antialiased`}>
+      <body className={`${primary.variable} antialiased`}>
         <NuqsAdapter>
           <Nav />
           {children}
           <Footer />
+          <Toaster richColors closeButton />
         </NuqsAdapter>
       </body>
     </html>

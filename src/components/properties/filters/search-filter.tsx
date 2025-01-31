@@ -1,14 +1,20 @@
+"use client";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { usePropertiesParams } from "@/hooks/use-properties-params";
+import { PropertyType } from "@/types/site";
 import { useTransition } from "react";
 
-export const SearchFilter = () => {
-  const { searchTerm, setSearchTerm } = usePropertiesParams();
+export const SearchFilter = ({
+  properties,
+}: {
+  properties: PropertyType[];
+}) => {
+  const { searchTerm, setSearchTerm } = usePropertiesParams({ properties });
   const [isPending, startTransition] = useTransition();
 
   return (
-    <div className="max-w-md">
+    <div className="max-w-md w-full">
       <Label htmlFor="search">Rechercher</Label>
       <Input
         id="search"

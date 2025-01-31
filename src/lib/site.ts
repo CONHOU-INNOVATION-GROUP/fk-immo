@@ -6,4 +6,5 @@ export const siteInfo = {
   author: "FK IMMo & construction",
   url: "fkimmo.com",
   keywords: ["Immobilier", "Construction"],
+  routes: ["/", "/properties"],
 };
