@@ -3,6 +3,7 @@ import { ContactSection } from "@/components/contact";
 import { Expertise } from "@/components/expertise";
 import { FeaturedProperties } from "@/components/featured-properties";
 import { Hero } from "@/components/hero";
+import { Property } from "@/components/propertie";
 import { RedSection } from "@/components/red-section";
 import { Reviews } from "@/components/reviews";
 import { Services } from "@/components/services";
@@ -12,7 +13,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+     
       <Stats />
+      <Property />
       <div className="relative space-y-24">
         <Services />
         <RedSection />

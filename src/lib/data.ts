@@ -41,29 +41,49 @@ export const services = [
   {
     title: "GESTION DES BIENS IMMOBILIERS",
     description:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
-    image: "/services/s1.webp",
+      "FK IMMO & CONSTRUCTION prends en charge tous les aspects de la gestion de votre bien, de la recherche de locataires à l'entretien courant, en passant par la perception des loyers et la gestion des éventuels litiges. Notre objectif est de vous libérer des contraintes liées à la gestion immobilière et de maximiser votre rentabilité.",
+    image: "/services/s3.webp",
     link: "#",
   },
   {
     title: "DÉCORATION D'INTÉRIEUR",
     description:
+      "Votre intérieur est le reflet de votre personnalité, FK IMMO & CONSTRUCTION comprend l'importance de créer un espace qui vous ressemble, qui soit à la fois esthétique, fonctionnel et chaleureux. Ainsi nous mettons notre passion et notre expertise au service de votre projet. Que vous souhaitiez relooker une pièce, transformer votre intérieur dans son ensemble ou simplement ajouter une touche de décoration, nous vous accompagnons à chaque étape",
+    image: "/services/s1.webp",
+    link: "#",
+  },
+  {
+    title: "LOTISSEMENT & DÉCAPAGE",
+    description:
+      "L'entreprise FK IMMO & CONSTRUCTION propose des services de lotissement et de décapage de terrain pour les particuliers, les entreprises et les promoteurs immobiliers. Nous disposons d'une équipe expérimentée et de l'équipement nécessaire pour réaliser ces travaux dans les règles de l'art et dans le respect des normes de sécurité et d'environnement.",
+    image: "/properties/10eme.2.jpg",
+    link: "#",
+  },
+  {
+  title: "PRESTATION DE SERVICE",
+    description:
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
+    image: "/services/s4.webp",
+    link: "#",
+  },
+];
+
+export const propertiesUne = [
+  {
+    
+    image: "/services/s1.webp",
+    link: "#",
+  },
+  {
     image: "/services/s2.webp",
     link: "#",
   },
   {
-    title: "LOTISSEMENT & DÉCAPAGE",
-    description:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
     image: "/services/s3.webp",
     link: "#",
   },
   {
-    title: "LOTISSEMENT & DÉCAPAGE",
-    description:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
-    image: "/services/s4.webp",
+   image: "/services/s4.webp",
     link: "#",
   },
 ];
@@ -159,27 +179,23 @@ export const contact = {
 export const footer = {
   categories: [
     {
-      title: "Use cases",
+      title: "Terrains en vente",
       links: [
-        { label: "UI design", href: "#" },
-        { label: "UX design", href: "#" },
-        { label: "Wireframing", href: "#" },
-        { label: "Diagramming", href: "#" },
-        { label: "Brainstorming", href: "#" },
-        { label: "Online whiteboard", href: "#" },
-        { label: "Team collaboration", href: "#" },
+        { label: "Abidjan", href: "#" },
+        { label: "Yamoussoukro", href: "#" },
+        { label: "Bouake", href: "#" },
+        { label: "Daloa", href: "#" },
+        { label: "Assinie", href: "#" }
       ],
     },
     {
-      title: "Explore",
+      title: "Maison et appartement",
       links: [
-        { label: "Design", href: "#" },
-        { label: "Prototyping", href: "#" },
-        { label: "Development features", href: "#" },
+        { label: "Duplex", href: "#" },
+        { label: "Villa de luxe", href: "#" },
+        { label: "Immeuble R+2", href: "#" },
         { label: "Design systems", href: "#" },
-        { label: "Collaboration features", href: "#" },
-        { label: "Design process", href: "#" },
-        { label: "FigJam", href: "#" },
+        { label: "Maisons bases", href: "#" }
       ],
     },
     {
