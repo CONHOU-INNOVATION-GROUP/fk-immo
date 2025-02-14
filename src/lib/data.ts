@@ -24,7 +24,7 @@ export const hero = {
 
 export const stats = [
   {
-    value: "+300",
+    value: "+100",
     label: "Biens vendus avec succès",
   },
   {
@@ -48,7 +48,7 @@ export const services = [
   {
     title: "DÉCORATION D'INTÉRIEUR",
     description:
-      "Votre intérieur est le reflet de votre personnalité, FK IMMO & CONSTRUCTION comprend l'importance de créer un espace qui vous ressemble, qui soit à la fois esthétique, fonctionnel et chaleureux. Ainsi nous mettons notre passion et notre expertise au service de votre projet. Que vous souhaitiez relooker une pièce, transformer votre intérieur dans son ensemble ou simplement ajouter une touche de décoration, nous vous accompagnons à chaque étape",
+      "Votre intérieur est le reflet de votre personnalité, FK IMMO & CONSTRUCTION comprend l'importance de créer un espace qui vous ressemble, qui soit à la fois esthétique, fonctionnel et chaleureux. Ainsi nous mettons notre passion et notre expertise au service de votre projet. Que vous souhaitiez relooker une pièce, transformer votre intérieur dans son ensemble ou simplement ajouter une touche de décoration, nous vous accompagnons à chaque étape.",
     image: "/services/s1.webp",
     link: "#",
   },
@@ -91,8 +91,7 @@ export const propertiesUne = [
 export const about = {
   title: "QUI SOMME NOUS ?",
   subtitle: "FK immo & construction",
-  description:
-    "We are a team of highly skilled professionals dedicated to providing exceptional real estate services. With years of experience in the industry, we understand the complexities of the real estate market and strive to deliver personalized solutions that meet our clients' unique needs.",
+  description:"FK IMMO & CONSTRUCTION est une structure dotée d'une expérience reconnue dans le secteur du foncier et dans le domaine de l'immobilier qui est disposer à vous accompagner dans la réalisation de tous vos projets. Gestion des biens immobiliers, Construction , Lotissement, Décapage de sites, Décoration d'intérieur et Événementiel. Nous créons des espaces de vies uniques et personnalisés en accord avec vos besoins, vos envies et votre budget. FK IMMO & CONSTRUCTION mets son savoir-faire au service de votre satisfaction, en vous offrant un accompagnement sur mesure et des solutions adaptées à chaque étape de votre projet.",
   image: "/about.webp",
   cta: {
     label: "DÉCOUVRIR",
@@ -131,16 +130,24 @@ export const expertise = {
 
 export const reviews = [
   {
-    text: "Ergo Ego Senator Inimicus, Si Ita Vultis, Homini, Amicus Esse, Sicut Semper Fui, Rei Publicae Debeo: Quid? Si Ipsas Inimicitias, Depono Rei Publicae Causa, Quis Me Tandem Iure Reprehendet.",
-    author: "MARIE PIERRE",
+    text: "Grâce à FK IMMO et CONSTRUCTION j'ai réussi à établir un ACD sur mon terrain que j'ai acheté à moins de 2 mois , j'ai même donné la construction de ma maison à l'entreprise et ça été vite fait En tout cas je suis fière.",
+    author: "Mr kouassi",
   },
   {
-    text: "Si Ipsas Inimicitias, Depono Rei Publicae Causa, Quis Me Tandem Iure Reprehendet, Praesertim Cum Ego Omnium Meorum Consiliorum Atque Factis Mihi Censuerim Petenda.",
-    author: "JOHN DOE",
+    text: "Je remercie FK IMMO & CONSTRUCTION pour mon terrain à Angré 10èmes tranches. Très beau terrain non un quartier calme et sécurisé et je vous le recommande vivement pour son expertise dans le foncier.",
+    author: "Mr kamagaté",
   },
   {
-    text: "Praesertim Cum Ego Omnium Meorum Consiliorum Atque Factorum Exempla Semper Ex Summorum Hominum Consiliis Atque Factis Mihi Censuerim Petenda.",
-    author: "SARAH SMITH",
+    text: "C'est grâce à Fk IMMO & CONSTRUCTION que j'ai pu obtenir mon ACD en moins de deux mois grâce à sa rapidité et sa maîtrise du foncier. Je vous recommande FK IMMO & CONSTRUCTION.",
+    author: "Mr Tapé",
+  },
+  {
+    text: "Je cherchais une structure pour la rénovation de mes bâtiments et un ami m'a recommandé Fk IMMO & CONSTRUCTION .\n\n Je vous assure que je suis tellement satisfaite de la qualité de leurs prestations.\nFk IMMO & CONSTRUCTION c'est une structure très professionnelle et expérimentée.",
+    author: "Dame Agnéro",
+  },
+  {
+    text: "Je cherchais à une structure événementielle pour l'organisation de mon mariage et une amie m'a recommandé FK IMMO & CONSTRUCTION au départ j'avais des craintes et grande fût ma surprise de voir et constater que FK IMMO & CONSTRUCTION à reproduit le thème de mon mariage et encore plus en innovant avec d'autres touches dont je ne croyais pas que la structure pouvait reproduire.\n Chapeau à Fk IMMO & CONSTRUCTION pour mon mariage réussi.",
+    author: "Mr Tapé",
   },
 ];
 

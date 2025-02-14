@@ -22,18 +22,18 @@ export const Property = ()=>{
       }, [api])
 
       const images = [
-        { src: "properties/p-une-1.png", rating: 5 },
+        { src: "properties/vridi 3.jpg", rating: 5 },
+        { src: "properties/vridi 4.jpg", rating: 3 },
+        { src: "properties/vridi.2.jpg", rating: 3 },
+        { src: "properties/vridi.jpg", rating: 4 },
         { src: "properties/10eme.2.jpg", rating: 4 },
-        { src: "properties/p-une-3.png", rating: 3 },
+        { src: "properties/binger-7.jpg", rating: 4 },
+        { src: "properties/binger-1.jpg", rating: 4 },
+        { src: "properties/10eme.3.jpg", rating: 5 },
+        { src: "properties/binger-6.jpg", rating: 4 },
+        { src: "properties/10eme.2.jpg", rating: 4 },
+        { src: "properties/binger-3.jpg", rating: 4 },
         { src: "properties/10eme4.jpg", rating: 4 },
-        { src: "properties/p-une-2.png", rating: 5 },
-        { src: "properties/p-une-3.png", rating: 3 },
-        { src: "properties/10eme.3.jpg", rating: 4 },
-        { src: "properties/p-une-3.png", rating: 3 },
-        { src: "properties/p-une-1.png", rating: 5 },
-        { src: "properties/p-une-2.png", rating: 4 },
-        { src: "properties/p-une-3.png", rating: 3 },
-        { src: "properties/p-une-1.png", rating: 5 },
       ];
 
     return (
