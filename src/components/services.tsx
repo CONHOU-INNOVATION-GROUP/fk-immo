@@ -35,29 +35,33 @@ export const Services = () => {
                         align: "start",
                         loop: true,
                       }}
-                      className="w-full md:pl-24 "
+                      className="w-full md:pl-8 "
                     >
                       <CarouselContent className="">
                         {services.map((service, index) => (
-                          <CarouselItem key={index} className="basis-2/3 md:basis-1/3">
-                            <div className="bg-white rounded-md  h-full md:rounded-3xl overflow-hidden shadow-md md:shadow-xl">
-                              <div className="h-48 overflow-hidden">
-                                <img
-                                  src={service.image}
-                                  alt={service.title}
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div className="p-2 md:p-6  flex  flex-col gap-2">
-                                <h3 className="text-md md:text-xl font-bold">
-                                  {service.title}
-                                </h3>
-                                <p className="text-gray-600 text-base md:text-sm">
-                                  {service.description}
-                                </p>
-                              </div>
-                            </div>
-                          </CarouselItem>
+                         <CarouselItem key={index} className="basis-full md:basis-1/3">
+                         <div className="bg-white rounded-3xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                           {/* Image */}
+                           <div className="h-56 md:h-64 w-full overflow-hidden rounded-t-3xl">
+                             <img
+                               src={service.image}
+                               alt={service.title}
+                               className="w-full h-full object-cover"
+                             />
+                           </div>
+                       
+                           {/* Contenu */}
+                           <div className="p-4 md:p-6 flex flex-col gap-3">
+                             <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+                               {service.title}
+                             </h3>
+                             <p className="text-gray-600 text-sm md:text-sm leading-relaxed">
+                               {service.description}
+                             </p>
+                           </div>
+                         </div>
+                       </CarouselItem>
+                       
                         ))}
                       </CarouselContent>
                     </Carousel>

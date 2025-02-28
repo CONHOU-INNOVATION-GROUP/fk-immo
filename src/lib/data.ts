@@ -59,10 +59,18 @@ export const services = [
     image: "/properties/10eme.2.jpg",
     link: "#",
   },
+  ,
+  {
+  title: "CONSTRUCTION",
+    description:
+      "FK IMMO & CONSTRUCTION, bien plus qu’un simple constructeur, vous accompagne de A à Z dans vos projets immobiliers. De la conception à la livraison, nous allions expertise, innovation et respect des normes pour réaliser des résidences, bâtiments commerciaux et infrastructures sur mesure. Engagés pour la qualité, les délais et l’efficacité énergétique, nous intégrons des matériaux durables et des technologies intelligentes.",
+    image: "/services/s4.webp",
+    link: "#",
+  },
   {
   title: "PRESTATION DE SERVICE",
     description:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut l",
+      "FK IMMO & CONSTRUCTION vous accompagne avec des services variés et adaptés à vos besoins. Nous assurons l’établissement d’ACD en seulement 2 mois jusqu’à la signature. Profitez de notre gestion Pack auto VTC ou location de voitures pour vos déplacements. Nous installons des systèmes de sécurité électronique pour protéger vos biens. Enfin, notre consultance en foncier vous guide dans vos projets immobiliers en toute sérénité. Avec FK IMMO & CONSTRUCTION, bénéficiez d’un service fiable, rapide et efficace !",
     image: "/services/s4.webp",
     link: "#",
   },
@@ -167,7 +175,7 @@ export const contact = {
     {
       icon: "/contact/email.png",
       title: "EMAIL",
-      details: "immo&construction@gmail.com",
+      details: "fkimmobilierconstruction@gmail.com", 
     },
   ],
   form: {
