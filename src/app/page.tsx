@@ -8,6 +8,7 @@ import { RedSection } from "@/components/red-section";
 import { Reviews } from "@/components/reviews";
 import { Services } from "@/components/services";
 import { Stats } from "@/components/stats";
+import HeroGeometric from "@/components/strollAnimation";
 
 export default function Home() {
   return (
@@ -16,8 +17,10 @@ export default function Home() {
      
       <Stats />
       <Property />
+      
       <div className="relative space-y-24">
         <Services />
+        <HeroGeometric />
         <RedSection />
         <About />
       </div>

@@ -28,12 +28,13 @@ export const Property = ()=>{
         { src: "properties/vridi.jpg", rating: 4 },
         { src: "properties/10eme.2.jpg", rating: 4 },
         { src: "properties/binger-7.jpg", rating: 4 },
-        { src: "properties/binger-1.jpg", rating: 4 },
-        { src: "properties/10eme.3.jpg", rating: 5 },
-        { src: "properties/binger-6.jpg", rating: 4 },
-        { src: "properties/10eme.2.jpg", rating: 4 },
-        { src: "properties/binger-3.jpg", rating: 4 },
-        { src: "properties/10eme4.jpg", rating: 4 },
+        { src: "properties/10-eme-1.jpg", rating: 4 },
+        { src: "properties/10-eme-3.jpg", rating: 5 },
+        // { src: "properties/binger-6.jpg", rating: 4 },
+        // { src: "properties/10eme.2.jpg", rating: 4 },
+        // { src: "properties/binger-3.jpg", rating: 4 },
+        // { src: "properties/10eme4.jpg", rating: 4 },
+
       ];
 
     return (

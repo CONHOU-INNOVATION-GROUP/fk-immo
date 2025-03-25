@@ -71,7 +71,7 @@ export const services = [
   title: "PRESTATION DE SERVICE",
     description:
       "FK IMMO & CONSTRUCTION vous accompagne avec des services variés et adaptés à vos besoins. Nous assurons l’établissement d’ACD en seulement 2 mois jusqu’à la signature. Profitez de notre gestion Pack auto VTC ou location de voitures pour vos déplacements. Nous installons des systèmes de sécurité électronique pour protéger vos biens. Enfin, notre consultance en foncier vous guide dans vos projets immobiliers en toute sérénité. Avec FK IMMO & CONSTRUCTION, bénéficiez d’un service fiable, rapide et efficace !",
-    image: "/services/s4.webp",
+    image: "/services/s5.jpg",
     link: "#",
   },
 ];
