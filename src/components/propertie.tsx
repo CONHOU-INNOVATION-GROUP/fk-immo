@@ -1,5 +1,5 @@
 "use client";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
+import { type CarouselApi } from "@/components/ui/carousel"
 import React from "react"
 import { Star } from "lucide-react";
 
