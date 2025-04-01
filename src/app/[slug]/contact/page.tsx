@@ -2,12 +2,11 @@
 
 import { ContactForm } from "@/components/contact-form";
 import { formatPrice, getProperty } from "@/lib/utils";
-import { use } from "react";
 
-export default function ContactPage(props: {
+export default async function ContactPage(props: {
   params: Promise<{ slug: string }>;
 }) {
-  const params = use(props.params);
+  const params = await props.params;
   const property = getProperty(params.slug);
 
   if (!property) {

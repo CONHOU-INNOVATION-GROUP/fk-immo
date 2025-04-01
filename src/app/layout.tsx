@@ -1,6 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { siteInfo } from "@/lib/site";
+import ProgressBarProvider from "@/providers/progressbar-provider";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
@@ -71,13 +72,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body className={`${primary.variable} antialiased`}>
+    <html lang="fr" suppressHydrationWarning>
+      <body className={`${primary.className} antialiased`}>
         <NuqsAdapter>
-          <Nav />
-          {children}
-          <Footer />
-          <Toaster richColors closeButton />
+          <ProgressBarProvider>
+            <Nav />
+            {children}
+            <Footer />
+            <Toaster richColors closeButton />
+          </ProgressBarProvider>
         </NuqsAdapter>
       </body>
     </html>

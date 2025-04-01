@@ -1,6 +1,7 @@
 "use client";
 import { PropertyType } from "@/types/site";
 import { useQueryState } from "nuqs";
+import { useDebounce } from "./useDebounce";
 
 export function usePropertiesParams({
   properties,
@@ -11,17 +12,19 @@ export function usePropertiesParams({
     defaultValue: "",
   });
 
+  const debouncedSetSearchTerm = useDebounce(searchTerm, 500);
+
   // Filter properties based on URL params
   const filteredProperties = properties.filter((property) => {
     // Search term filter
     const searchMatch =
-      !searchTerm ||
+      !debouncedSetSearchTerm ||
       property.metadata?.title
         .toLowerCase()
-        .includes(searchTerm.toLowerCase()) ||
+        .includes(debouncedSetSearchTerm.toLowerCase()) ||
       property.metadata?.description
         .toLowerCase()
-        .includes(searchTerm.toLowerCase());
+        .includes(debouncedSetSearchTerm.toLowerCase());
 
     return searchMatch;
   });
