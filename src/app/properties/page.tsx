@@ -1,4 +1,3 @@
-"use client";
 
 import FilteredProperties from "@/components/filteredProperties";
 import { SearchFilter } from "@/components/properties/filters/search-filter";

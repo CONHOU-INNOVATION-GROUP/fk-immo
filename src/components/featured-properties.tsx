@@ -9,7 +9,7 @@ export const FeaturedProperties = () => {
   return (
     <section className="py-16 px-4" id="features">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-12">
+        <div className=" sm:flex justify-between items-center mb-12">
           <div>
             <h2 className="text-3xl font-bold mb-2">Nos propriétés</h2>
             <p className="text-gray-600">Découvrez nos meilleures propriétés</p>

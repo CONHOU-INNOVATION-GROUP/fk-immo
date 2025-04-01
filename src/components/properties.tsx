@@ -7,7 +7,13 @@ import { SearchFilter } from "./properties/filters/search-filter";
 import { TagFilter } from "./properties/filters/tag-filter";
 import { PropertyGrid } from "./properties/property-grid";
 
-export const PropertiesPage = () => {
+import { PropertyType } from "@/types/site";
+
+interface PropertiesPageProps {
+  properties: PropertyType[];
+}
+
+export const PropertiesPage = ({ properties }: PropertiesPageProps) => {
   return (
     <section className="py-16 px-4" id="properties">
       <div className="max-w-7xl mx-auto">
@@ -18,14 +24,14 @@ export const PropertiesPage = () => {
 
         {/* Search and Filters */}
         <div className="mb-8 space-y-6">
-          <SearchFilter />
+          <SearchFilter properties={properties} />
 
           <div className="flex flex-wrap gap-6">
-            <TagFilter />
-            <PriceFilter />
+            <TagFilter  properties={properties} />
+            <PriceFilter  properties={properties} />
           </div>
 
-          <FeaturesFilter />
+          <FeaturesFilter  properties={properties} />
         </div>
 
         <PropertyGrid />
